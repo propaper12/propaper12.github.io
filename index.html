@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ömer Çakan | Data Infrastructure Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #030014; /* Deep cosmic black */
+            --card-base: rgba(255, 255, 255, 0.03);
+            --border-base: rgba(255, 255, 255, 0.08);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-code { font-family: 'JetBrains Mono', monospace; }
+
+        /* Aurora Glow Effect */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(34, 211, 238, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(192, 132, 252, 0.08), transparent 25%);
+            filter: blur(60px);
+        }
+
+        .premium-card {
+            background: var(--card-base);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-base);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .premium-card:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(34, 211, 238, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #22d3ee, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .tag:hover {
+            background: rgba(34, 211, 238, 0.15);
+            border-color: rgba(34, 211, 238, 0.5);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .list-icon {
+            margin-top: 4px;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #22d3ee, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500/30">
+
+    <div class="aurora-bg"></div>
+
+    <nav class="fixed w-full z-50 bg-[#030014]/60 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-extrabold text-2xl tracking-tight">ÖMER<span class="text-cyan-400">.</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Vizyon</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Deneyim</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Mimari</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projeler</a>
+            </div>
+            <a href="#contact" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-slate-200 transition-transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]">İletişim</a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-48 pb-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/3 flex justify-center relative" data-aos="fade-right">
+            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+            <div class="relative w-72 h-72 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-purple-500">
+                <img src="1.jpg" alt="Ömer Çakan" class="rounded-full w-full h-full object-cover border-[6px] border-[#030014]">
+                <div class="absolute bottom-6 right-6 bg-emerald-400 w-6 h-6 rounded-full border-4 border-[#030014] shadow-[0_0_15px_rgba(52,211,153,0.5)]" title="Open to Work"></div>
+            </div>
+        </div>
+        
+        <div class="md:w-2/3 text-center md:text-left" data-aos="fade-left">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-code mb-6">
+                <i class="fas fa-terminal"></i> Data & Infrastructure Engineer
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]">
+                Merhaba, Ben Ömer.<br>
+                <span class="text-gradient">Verinin Sistem Mimarı.</span>
+            </h1>
+            <p class="text-slate-400 text-lg mb-8 leading-relaxed font-light max-w-3xl">
+                Apache Kafka, Spark ve Flink ile ultra düşük gecikmeli (low-latency) gerçek zamanlı veri akış sistemleri; Delta Lake ve dbt ile ölçeklenebilir ve idempotent Lakehouse mimarileri inşa ediyorum. Geliştirdiğim projelerde veri boru hatlarını Docker ekosisteminde containerize ederek, üretim ortamına hazır (production-ready) ve yüksek erişilebilirlik (HA) standartlarına uygun yapılar tasarlıyorum.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#projects" class="bg-cyan-500 hover:bg-cyan-400 text-[#030014] px-8 py-3.5 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] flex items-center gap-2">
+                    Platformları Gör <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://github.com/propaper12" target="_blank" class="premium-card px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                    <i class="fab fa-github text-xl"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ömer-çakan-819751261" target="_blank" class="premium-card px-6 py-3.5 rounded-full font-bold hover:bg-[#0077b5]/20 transition-all flex items-center gap-2">
+                    <i class="fab fa-linkedin text-[#0077b5] text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+            <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6">
+                    <i class="fas fa-server text-cyan-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">DaaS Vizyonu</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Veriyi sadece işlemiyor, FastAPI ve Redis tabanlı katmanlarla analistler ve veri bilimciler için yüksek performanslı servisler (Serving Layer) kurguluyorum.</p>
+            </div>
+            <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-alt text-purple-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Mühendislik Disiplini</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Veri kalitesini ve model yaşam döngüsünü (MLOps) Dockerize edilmiş ortamlar ve mühendislik pratikleriyle ele alarak otonom altyapılar sunuyorum.</p>
+            </div>
+            <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-2xl bg-pink-500/10 flex items-center justify-center mb-6">
+                    <i class="fas fa-layer-group text-pink-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Modern Data Stack</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">dbt ile analitik süreçleri optimize ediyor, ham veriyi (Bronze) işlenmiş kararlara (Gold) dönüştüren Medallion Lakehouse mimarisini uyguluyorum.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-extrabold mb-4 text-center">Mimari <span class="text-cyan-400">Cephanelik</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="0">
+                    <h4 class="font-bold text-lg mb-6 text-white flex items-center gap-2">
+                        <i class="fas fa-stream text-cyan-400"></i> Streaming & ETL
+                    </h4>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Real-Time</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Apache Kafka</span> <span class="tag">Spark Streaming</span> <span class="tag">Flink</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Orchestration</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Airflow</span> <span class="tag">dbt</span> <span class="tag">MLflow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-lg mb-6 text-white flex items-center gap-2">
+                        <i class="fas fa-database text-purple-400"></i> Storage & DBs
+                    </h4>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Lakehouse</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Delta Lake</span> <span class="tag">MinIO (S3)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Databases</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">PostgreSQL</span> <span class="tag">TimescaleDB</span> <span class="tag">Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-bold text-lg mb-6 text-white flex items-center gap-2">
+                        <i class="fas fa-brain text-pink-400"></i> AI & Core
+                    </h4>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Languages</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Python</span> <span class="tag">SQL</span> <span class="tag">Bash</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">ML & AI</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">XGBoost</span> <span class="tag">Prophet</span> <span class="tag">FastAPI</span> <span class="tag">SHAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-lg mb-6 text-white flex items-center gap-2">
+                        <i class="fas fa-cloud text-emerald-400"></i> Cloud & Infra
+                    </h4>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">DevOps</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Docker</span> <span class="tag">AWS (EC2/S3)</span> <span class="tag">Linux</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Observability</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tag">Prometheus</span> <span class="tag">Grafana</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-extrabold mb-4 text-center">Production-Ready <span class="text-purple-400">Projeler</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+            </div>
+        
+            <div class="space-y-12">
+                
+                <div class="premium-card p-8 md:p-12" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row justify-between items-start gap-6 mb-6">
+                        <div class="w-full">
+                            <h3 class="text-3xl font-bold text-white mb-2">RadarPro <span class="text-xl text-slate-400 font-light">| Real-Time DaaS & MLOps Platform</span></h3>
+                            <div class="flex flex-wrap items-center gap-3 mt-4 mb-6 p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <span class="text-cyan-400 font-code text-xs font-bold uppercase tracking-widest">Teknolojiler:</span>
+                                <span class="tag">Apache Kafka</span> <span class="tag">Spark Structured Streaming</span> <span class="tag">Delta Lake (MinIO)</span> <span class="tag">FastAPI</span> <span class="tag">Redis</span> <span class="tag">MLflow</span> <span class="tag">TimescaleDB</span> <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/propaper12/An-Open-Source-Real-Time-Financial-Lakehouse-Project" target="_blank" class="shrink-0 bg-white/10 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fab fa-github text-lg"></i> Kodu İncele
+                        </a>
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-300 leading-relaxed">
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Uçtan Uca Streaming Hattı:</strong> Binance Futures üzerinden 25+ varlığın canlı Trade, Depth ve Likidasyon verilerini Apache Kafka ve Spark Streaming kullanarak işleyen, uçtan uca gecikmesi &lt;5 saniye olan yüksek kapasiteli bir pipeline inşa ettim.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">DaaS ve Abonelik Mimarisi:</strong> FastAPI ve Redis Atomic Counters kullanarak; FREE, PREMIUM ve VIP katmanlarına sahip, dağıtık hız sınırlama (Rate Limiting) ve yetkilendirme (Auth) mekanizmalı bir Data-as-a-Service modeli kurguladım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Model-as-a-Service (MaaS) ve Kaynak Optimizasyonu:</strong> Tahminleme (inference) yükünü Spark'tan ayırıp FastAPI ve Redis Pub/Sub tabanlı bir mikroservise taşıyarak, sistemin RAM tüketimini %60 optimize ettim ve "Zero-Downtime Hot-Reload" mekanizmasıyla modellerin kesintisiz güncellenmesini sağladım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Modern Lakehouse Uygulaması:</strong> MinIO üzerinde Delta Lake kullanarak Medallion Architecture kurguladım; dinamik bölümleme stratejisi ile geçmişe dönük analitik sorgu performansını %80 artırdım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Otonom MLOps Döngüsü:</strong> MLflow ile model versiyonlama ve deney takibi gerçekleştirdim; veri hacmi ve drift eşiklerine göre eğitimi tetikleyen otonom bir ML Watcher sistemi geliştirdim.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="premium-card p-8 md:p-12" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row justify-between items-start gap-6 mb-6">
+                        <div class="w-full">
+                            <h3 class="text-3xl font-bold text-white mb-2">Global Energy & Climate Hub <span class="text-xl text-slate-400 font-light">| Data Engineer & AI Platform</span></h3>
+                            <div class="flex flex-wrap items-center gap-3 mt-4 mb-6 p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <span class="text-cyan-400 font-code text-xs font-bold uppercase tracking-widest">Teknolojiler:</span>
+                                <span class="tag">PySpark</span> <span class="tag">dbt</span> <span class="tag">Delta Lake</span> <span class="tag">MLflow</span> <span class="tag">PostgreSQL</span> <span class="tag">Docker</span> <span class="tag">XGBoost</span> <span class="tag">unittest</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/propaper12/global-energy-climate-data-engineering" target="_blank" class="shrink-0 bg-white/10 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fab fa-github text-lg"></i> Kodu İncele
+                        </a>
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-300 leading-relaxed">
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Heterojen Veri Entegrasyonu:</strong> 4 farklı küresel kaynaktan (Enerji, Emisyon, vb.) gelen verileri programatik pipeline'lar ile MinIO (S3) Bronze katmanına asenkron olarak aktardım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Analytics Engineering & dbt:</strong> Modüler SQL modelleri ve test süreçleri kurgulayarak; ham veriyi iş kararlarına uygun analitik tablolara dönüştürdüm.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Medallion & Idempotent Pipeline:</strong> Veri yaşam döngüsünü Apache Spark ile "idempotent" (tekrarlanabilir ve hata payı sıfır) bir yapıda kurgulayarak veri tutarlılığını %100 garanti altına aldım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Predictive Analytics & QA:</strong> XGBoost ile 2040 iklim projeksiyonlarını otomatize ettim, MLflow ile izledim ve `unittest` ile üretim seviyesi veri doğrulama testleri geliştirdim.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">SQL Optimizasyonu:</strong> PostgreSQL tarafında ileri seviye indeksleme ve Partitioning stratejileri ile karmaşık analitik sorgu performansını 3 kat artırdım.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="premium-card p-8 md:p-12" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row justify-between items-start gap-6 mb-6">
+                        <div class="w-full">
+                            <h3 class="text-3xl font-bold text-white mb-2">Strategy Hub Pro <span class="text-xl text-slate-400 font-light">| E-Ticaret Büyüme & Fiyatlandırma Zekası</span></h3>
+                            <div class="flex flex-wrap items-center gap-3 mt-4 mb-6 p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <span class="text-cyan-400 font-code text-xs font-bold uppercase tracking-widest">Teknolojiler:</span>
+                                <span class="tag">Python</span> <span class="tag">Scikit-Learn</span> <span class="tag">XGBoost</span> <span class="tag">Prophet</span> <span class="tag">Pandas</span> <span class="tag">Plotly</span> <span class="tag">Streamlit</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/propaper12/Indian-Retail-Strategy-Hub" target="_blank" class="shrink-0 bg-white/10 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fab fa-github text-lg"></i> Kodu İncele
+                        </a>
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-300 leading-relaxed">
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">End-to-End Analytical Pipeline:</strong> Büyük ölçekli e-ticaret veri setleri için IQR tabanlı aykırı değer tespiti ve veri temizleme süreçlerini içeren uçtan uca bir boru hattı geliştirdim.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Automated Model Selection (AutoML):</strong> XGBoost, LightGBM ve Prophet algoritmalarını R2 ve RMSE metriklerine göre otomatik yarıştırıp en iyi performansı seçen "Champion Model" pipeline'ı tasarladım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Algorithmic Customer Segmentation:</strong> Müşteri davranışlarını analiz etmek için Elbow metodu ile optimize edilmiş 3D K-Means kümeleme algoritmasını uyguladım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">AI-Driven Price Optimization:</strong> Farklı fiyatlandırma senaryolarının kârlılık üzerindeki etkilerini hesaplayan yapay zeka destekli bir Simülasyon Motoru geliştirdim.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="premium-card p-8 md:p-12" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row justify-between items-start gap-6 mb-6">
+                        <div class="w-full">
+                            <h3 class="text-3xl font-bold text-white mb-2">Financial Intelligence <span class="text-xl text-slate-400 font-light">| Portfolio Analytics Platform</span></h3>
+                            <div class="flex flex-wrap items-center gap-3 mt-4 mb-6 p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <span class="text-cyan-400 font-code text-xs font-bold uppercase tracking-widest">Teknolojiler:</span>
+                                <span class="tag">Python</span> <span class="tag">XGBoost</span> <span class="tag">Prophet</span> <span class="tag">SHAP</span> <span class="tag">Scikit-learn</span> <span class="tag">Streamlit</span> <span class="tag">Finnhub API</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/propaper12/kripto-fiyat-tahmin-uygulamasi" target="_blank" class="shrink-0 bg-white/10 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fab fa-github text-lg"></i> Kodu İncele
+                        </a>
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-300 leading-relaxed">
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Multi-Source Data Pipelines:</strong> BIST 100 ve kripto verilerini yfinance ve Finnhub üzerinden asenkron olarak tüketen, eksik sinyalleri otonom yöneten dayanıklı bir Data Ingestion hattı kurdum.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Feature Engineering & Time-Series:</strong> Tahmin başarı oranını artırmak için Lag-based features ve kompleks teknik indikatörler (RSI, MACD, Bollinger) üreten bir öznitelik mühendisliği katmanı tasarladım.</div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <i class="fas fa-check-circle list-icon"></i>
+                            <div><strong class="text-white">Explainable AI (XAI) & Risk Metrics:</strong> Kara kutu modellerin kararlarını SHAP kütüphanesi ile şeffaflaştırdım; Sharpe Oranı gibi risk metriklerini entegre ettim.</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 px-6 border-t border-white/5 bg-[#030014]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+            
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-extrabold mb-10 text-white flex items-center gap-4">
+                    <i class="fas fa-briefcase text-cyan-400"></i> Kariyer Yolu
+                </h2>
+                <div class="space-y-6">
+                    <div class="premium-card p-6 border-l-4 border-cyan-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-white">Core Team Member - Tech</h4>
+                            <span class="text-xs font-code text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">Eyl 2025 - Subat 2026</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-2">Huawei Student Developers (HSD) Türkiye</p>
+                        <p class="text-sm text-slate-300">Teknik workshop, seminer ve hackathon süreçlerinin operasyonel koordinasyonu.</p>
+                    </div>
+
+                    <div class="premium-card p-6 border-l-4 border-purple-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-white">Data Science Developer</h4>
+                            <span class="text-xs font-code text-purple-400 bg-purple-500/10 px-2 py-1 rounded">May - Ara 2025</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-2">Verisepeti.net (No-Code Platform)</p>
+                        <p class="text-sm text-slate-300">AutoML, XAI modülleri ve Python analitik altyapısının web entegrasyonu geliştirilmesi.</p>
+                    </div>
+
+                    <div class="premium-card p-6 border-l-4 border-pink-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-white">AWS Academy Participant</h4>
+                            <span class="text-xs font-code text-pink-400 bg-pink-500/10 px-2 py-1 rounded">Eki - Ara 2025</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-2">LIMONCLOUD</p>
+                        <p class="text-sm text-slate-300">EC2, IAM, S3 ve Cloud Networking üzerine uygulamalı bulut altyapı mimarisi eğitimi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-extrabold mb-10 text-white flex items-center gap-4">
+                    <i class="fas fa-graduation-cap text-purple-400"></i> Akademik Temel
+                </h2>
+                <div class="premium-card p-8 mb-8">
+                    <h4 class="text-2xl font-bold mb-2 text-white">İstanbul Gelişim Üniversitesi</h4>
+                    <p class="text-lg text-cyan-400 mb-4 font-code">Yönetim Bilişim Sistemleri (YBS)</p>
+                    <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                        <i class="far fa-calendar-alt"></i> Eyl 2022 - Halen (2026 Mezuniyeti)
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Akademik disiplini, modern veri mühendisliği pratikleriyle birleştirerek gerçek dünya senaryolarına uygun bitirme projeleri geliştiriyorum.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="premium-card p-6 text-center">
+                        <h5 class="font-bold text-white mb-2">İngilizce</h5>
+                        <p class="text-sm text-cyan-400 font-code">B1 Seviyesi (Teknik)</p>
+                    </div>
+                    <div class="premium-card p-6 text-center">
+                        <h5 class="font-bold text-white mb-2">Türkçe</h5>
+                        <p class="text-sm text-cyan-400 font-code">Ana Dil</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="border-t border-white/10 bg-[#02000a] py-24 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent"></div>
+        <div class="max-w-3xl mx-auto relative z-10" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white">Veri Altyapınızı Ölçeklendirelim.</h2>
+            <p class="text-slate-400 text-lg mb-10">Data Engineering veya MLOps rolleri için açık pozisyonlarınız varsa, production-ready sistemler kurmak için hazırım.</p>
+            
+            <div class="flex justify-center gap-6 mb-16">
+                <a href="mailto:omercakan5@gmail.com" class="premium-card w-14 h-14 flex items-center justify-center text-xl hover:text-cyan-400 transition-colors"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ömer-çakan-819751261" target="_blank" class="premium-card w-14 h-14 flex items-center justify-center text-xl hover:text-[#0077b5] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/propaper12" target="_blank" class="premium-card w-14 h-14 flex items-center justify-center text-xl hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <div class="text-sm font-code text-slate-600 flex flex-col md:flex-row justify-center items-center gap-4">
+                <span>Küçükçekmece / İstanbul</span>
+                <span class="hidden md:block">|</span>
+                <span>Tel: 553 177 60 89</span>
+            </div>
+            <p class="text-xs font-code text-slate-700 mt-6">
+                © 2026 Ömer Çakan. All pipelines operational.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>
