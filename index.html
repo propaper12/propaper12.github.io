@@ -269,9 +269,13 @@
         <div class="md:col-span-4 flex justify-center relative order-last md:order-first" data-aos="fade-right">
             <div class="absolute inset-0 bg-gradient-to-tr from-cyber-cyan to-cyber-purple rounded-full blur-3xl opacity-20 animate-pulse"></div>
             <div class="relative w-72 h-72 rounded-full p-1 bg-gradient-to-tr from-cyber-cyan via-cyber-purple to-cyber-pink shadow-[0_0_50px_rgba(99,102,241,0.15)]">
-                <!-- Avatar vector monogram design (zero errors) -->
+                <!-- Avatar image wrapper -->
                 <div class="w-full h-full rounded-full overflow-hidden bg-white relative border-[4px] border-white flex items-center justify-center">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 text-center p-4">
+                    <!-- The actual profile photo (1.jpg) -->
+                    <img src="1.jpg" alt="Ömer Çakan" id="avatarImg" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex'">
+                    
+                    <!-- The fallback monogram badge (shown if 1.jpg is missing) -->
+                    <div id="avatarFallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 text-center p-4">
                         <!-- Cyber visualizer ring -->
                         <div class="absolute inset-2 rounded-full border border-dashed border-cyber-purple/20 animate-spin" style="animation-duration: 40s;"></div>
                         <div class="absolute inset-4 rounded-full border border-dashed border-cyber-cyan/20 animate-spin" style="animation-duration: 20s; animation-direction: reverse;"></div>
